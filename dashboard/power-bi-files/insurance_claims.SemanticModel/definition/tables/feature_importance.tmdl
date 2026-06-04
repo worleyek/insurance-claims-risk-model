@@ -1,0 +1,34 @@
+table feature_importance
+	lineageTag: 87306c0c-47be-4818-bfa3-680d6762aab4
+
+	column Feature
+		dataType: string
+		lineageTag: ddccc802-f003-401c-a6c1-e374430d4f4e
+		summarizeBy: none
+		sourceColumn: Feature
+
+		annotation SummarizationSetBy = Automatic
+
+	column Importance
+		dataType: double
+		lineageTag: bcbc6158-a3a7-40dd-ac4f-48259fcc50c1
+		summarizeBy: sum
+		sourceColumn: Importance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition feature_importance = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ddDLCsIwEAXQf+m6Sh4mNVsVVy7EqptSQgxBA2kHUlP17y1N8UXdzj3MXKYoEgdaXS3Uche8ckmaoCmeYcZoUqYfaR5OwZ9UHQElmJEetOZitTNSO9U0chPuwT9kfjj2DmUYM/HfLZWPjguB8IhbQ/CTFYB/064ZHaOvm5RzGrtpaI1XZyO33lQ2VENOiODf+UI1VseUCCHG1u9v8FOEZATFJ9laQ2WGKZ/Tblo+AQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Feature = _t, Importance = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Feature", type text}, {"Importance", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

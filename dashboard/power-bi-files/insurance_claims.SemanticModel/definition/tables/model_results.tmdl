@@ -1,0 +1,53 @@
+table model_results
+	lineageTag: 8994b445-60cb-4c1a-9874-23251585247e
+
+	column Model
+		dataType: string
+		lineageTag: 7974bdf2-4476-454f-91f3-fc56eb3be0ea
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAE
+		dataType: double
+		lineageTag: 14835003-b304-4747-b3b9-a51d79d6fdef
+		summarizeBy: sum
+		sourceColumn: MAE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RMSE
+		dataType: double
+		lineageTag: 7085ddc3-1fc3-4a4d-a9f8-8806d6a8029a
+		summarizeBy: sum
+		sourceColumn: RMSE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column R2
+		dataType: double
+		lineageTag: 1bb7c3a5-83db-4b87-b67d-a86cf9240573
+		summarizeBy: sum
+		sourceColumn: R2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition model_results = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\ekw22\Downloads\insurance_project\model_results.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Model", type text}, {"MAE", type number}, {"RMSE", type number}, {"R2", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
