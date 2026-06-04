@@ -19,6 +19,19 @@ The objective is to help insurers better understand risk drivers and improve und
 
 ---
 
+## Folders in Repository
+- `data` - contains raw and processed datasets
+- `dashboard` - contains model output files used for dashboard creation, Power BI project files, and dashboard images
+
+## Files in Repository
+
+- `insurance_claims_model.ipynb` – full analysis and modeling pipeline
+- `insurance_claims_sql_pipeline.sql` - SQL data cleaning, analysis, and feature engineering
+- `load_data.py` – used to load data into PostgreSQL
+- `requirements.txt` – Python dependencies
+
+---
+
 ## Dataset
 
 Auto insurance claims dataset containing policyholder demographics, vehicle attributes, policy details, and claim amounts.
@@ -58,8 +71,8 @@ The following regression models were trained and evaluated:
 - Gradient Boosting Regressor
 
 Models were evaluated using:
-- MAE
-- RMSE
+- MAE (mean absolute error)
+- RMSE (root mean square error)
 - R²
 
 ### 4. Hyperparameter Tuning
@@ -86,6 +99,15 @@ Final dataset was exported for Power BI, including:
 - Monthly premium and vehicle characteristics were strong predictors of claim severity
 - Removing premium and CLV reduced model performance, indicating they contain meaningful risk information
 
+| Model | MAE | RMSE | R² |
+|:------|:----|:-----|:----|
+| Random Forest | 93.03 | 138.42 | 0.8608 |
+| Gradient Boosting | 95.23 | 139.46 | 0.8587 |
+| Lasso | 125.46 | 177.21 | 0.7719 |
+| Elastic Net | 123.84 | 177.82 | 0.7703 |
+| Linear Regression | 127.78 | 178.46 | 0.7687 |
+| Ridge | 149.65 | 206.48 | 0.6903 |
+
 ---
 
 ## Final Output
@@ -95,19 +117,6 @@ The final dataset is designed for Power BI dashboards to support:
 - Claim severity analysis
 - Policyholder profiling
 - Model performance visualization
-
----
-
-## Folders in Repository
-- `data` - contains raw and processed datasets
-- `dashboard` - contains model output files used for dashboard creation, Power BI project files, and dashboard images
-
-## Files in Repository
-
-- `insurance_claims_model.ipynb` – full analysis and modeling pipeline
-- `insurance_claims_sql_pipeline.sql` - SQL data cleaning, analysis, and feature engineering
-- `load_data.py` – used to load data into PostgreSQL
-- `requirements.txt` – Python dependencies
 
 ---
 
