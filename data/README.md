@@ -1,10 +1,10 @@
 ## Dataset Information
-The `raw` folder contains the unprocessed dataset.
 
-The `processed.zip` file contains three `.csv` files:
+The [`raw`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/data/raw) folder contains the original, unprocessed dataset ([source](https://www.kaggle.com/datasets/thebumpkin/auto-insurance-claims-updated-to-2024)).
 
-1. `claims_clean.csv`
-2. `claims_final.csv`
-3. `claims_large.csv`
+The [`processed`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/data/processed) folder contains the cleaned and prepared datasets used for analysis:
 
-These are processed versions of the original dataset. The file `claims_large.csv` contains the expanded dataset (500,000 rows), and the file size is too large to upload on its own.
+- `claims_clean.csv`
+- `claims_final.csv`
+
+The `processed.zip` archive includes all processed datasets, along with claims_large.csv, an expanded version of the dataset containing 500,000 records.
