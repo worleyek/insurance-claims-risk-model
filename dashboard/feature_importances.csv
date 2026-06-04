@@ -1,0 +1,11 @@
+Feature,Importance
+location_Rural,0.141553
+location_Suburban,0.132152
+vehicle_class_Luxury_SUV,0.071159
+vehicle_class_Luxury_Car,0.069901
+vehicle_class_Four-Door_Car,0.055331
+vehicle_class_SUV,0.036632
+coverage_Premium,0.032296
+coverage_Basic,0.029991
+vehicle_class_Two-Door_Car,0.027203
+income,0.026833
