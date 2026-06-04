@@ -20,8 +20,8 @@ The objective is to help insurers better understand risk drivers and improve und
 ---
 
 ## Folders in Repository
-- `data` - contains raw and processed datasets
-- `dashboard` - contains model output files used for dashboard creation, Power BI project files, and dashboard images
+- [`data`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/data) - contains raw and processed datasets
+- [`dashboard`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard) - contains model output files used for dashboard creation, Power BI project files, and dashboard images
 
 ## Files in Repository
 
@@ -34,7 +34,7 @@ The objective is to help insurers better understand risk drivers and improve und
 
 ## Dataset
 
-Auto insurance claims dataset containing policyholder demographics, vehicle attributes, policy details, and claim amounts.
+Auto insurance claims dataset containing policyholder demographics, vehicle attributes, policy details, and claim amounts ([source](https://www.kaggle.com/datasets/thebumpkin/auto-insurance-claims-updated-to-2024)).
 
 Key features include:
 - Income
@@ -118,6 +118,11 @@ The final dataset is designed for Power BI dashboards to support:
 - Policyholder profiling
 - Model performance visualization
 
+<img width="2767" height="1600" alt="image" src="https://github.com/user-attachments/assets/2042c8e7-875c-40b6-afd7-32effedfd9e3"/>
+
+More dashboard images can be found [here](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard/images).
+
+
 ---
 
 ## Modeling Strategy
@@ -131,3 +136,19 @@ To balance performance and scalability, the workflow was structured as follows:
 - The expanded dataset with predictions was exported for Power BI dashboard development
 
 This approach allowed for efficient model development while still enabling large-scale business intelligence reporting and visualization.
+
+---
+
+## Limitations
+- The dataset is synthetic/secondary and may not fully represent real-world insurance claim behavior.
+- Monthly Premium and Customer Lifetime Value may partially encode risk information, which could inflate predictive performance.
+- Temporal effects were not explicitly modeled (e.g., claim trends over time).
+- External risk factors such as driving behavior, weather, or geographic hazard exposure were not included.
+
+---
+
+## Future Work
+- Incorporate time-series or survival analysis techniques for claim prediction over time.
+- Evaluate advanced gradient boosting frameworks such as XGBoost.
+- Build a classification model to predict high-risk policyholders.
+- Deploy the model as a dashboard or API for real-time risk scoring.
