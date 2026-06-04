@@ -1,5 +1,5 @@
 /* =========================================================
-   PROJECT: Auto Insurance Claims Analytics Pipeline
+   PROJECT: Auto Insurance Claims Analytics
    AUTHOR: Emily Worley
    TOOLING: PostgreSQL, SQL
    DATE: May 2026
