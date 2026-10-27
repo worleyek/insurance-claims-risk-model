@@ -1,36 +1,61 @@
 # Insurance Claim Prediction & Risk Analytics
 
+🔗 **[Explore the Insurance Claims Dashboard](https://worleyek.github.io/building/insurance-claims-dashboard.html)**
+
 ## Project Overview
 
-This project builds an end-to-end insurance analytics pipeline to predict claim severity and identify high-risk policyholders using SQL, Python, and machine learning. The workflow includes data extraction from PostgreSQL, data cleaning and feature engineering, predictive modeling, and preparation of business intelligence outputs for Power BI.
+This project builds an end-to-end insurance analytics pipeline to predict claim severity and identify high-risk policyholders using SQL, Python, and machine learning. 
+
+The workflow includes data extraction from PostgreSQL, data cleaning and feature engineering, predictive modeling, and business intelligence reporting through Power BI and an interactive dashboard on my portfolio website.
 
 The objective is to help insurers better understand risk drivers and improve underwriting and pricing decisions.
 
----
 
 ## Tools & Technologies
 
-- SQL (PostgreSQL) – data extraction, cleaning, feature engineering
-- Python – data processing and modeling
-- Pandas / NumPy – data manipulation
-- Scikit-learn – machine learning models and evaluation
-- Matplotlib – visualization
-- Power BI – dashboarding (final output layer)
+- **SQL (PostgreSQL)** – data extraction, cleaning, feature engineering
+- **Python** – data processing and modeling
+- **Pandas / NumPy** – data manipulation
+- **Scikit-learn** – machine learning models and evaluation
+- **Matplotlib** – visualization
+- **Power BI** – business intelligence reporting and visualizations
+- **Java** – data validation, aggregation, and JSON export for the website dashboard
+- **HTML / CSS / JavaScript** – interactive portfolio dashboard with responsive charts and filters
+- **GitHub Pages** – hosting for the portfolio dashboard
 
----
+
+## Interactive Website Dashboard
+
+**[Explore the Insurance Claims Dashboard](https://worleyek.github.io/building/insurance-claims-dashboard.html)**
+
+I built an interactive dashboard for my [personal portfolio website](https://worleyek.github.io/) to make the analysis accessible in a browser. It complements the Power BI report and presents the insurance claims results using the website's existing visual design and dark/light theme support.
+
+The dashboard includes:
+- **Portfolio overview:** summary metrics and comparisons of observed versus predicted claim amounts.
+- **Risk segmentation:** exploration of risk scores, claim severity, and policyholder segments.
+- **Customer insights:** interactive analysis of customer and policy characteristics.
+- **Model performance:** comparison of regression models and feature importance.
+- **Interactive filtering:** explore results by state, coverage, vehicle class, and income band, with chart-level interactions.
+
+The website dashboard summarizes **500,000 synthetic policy records** from the expanded prediction export. 
+
+A Java exporter validates and aggregates the project data into a JSON file consumed by client-side JavaScript. **This is an interactive static snapshot, not a live database connection or real-time prediction service.** 
+
+The dashboard source code is maintained in the [personal website repository](https://github.com/worleyek/worleyek.github.io), under `building/insurance-claims-dashboard.html` and `building/dashboard/insurance-claims/`.
+
 
 ## Folders in Repository
 - [`data`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/data) - contains raw and processed datasets
 - [`dashboard`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard) - contains model output files used for dashboard creation, Power BI project files, and dashboard images
+- [`java-api`](https://github.com/worleyek/insurance-claims-risk-model/tree/main/java-api) - contains the Java application and related source files
 
 ## Files in Repository
 
-- `insurance_claims_model.ipynb` – full analysis and modeling pipeline
+- `insurance_claim_modeling.ipynb` – full analysis and modeling pipeline
 - `insurance_claims_sql_pipeline.sql` - SQL data cleaning, analysis, and feature engineering
 - `load_data.py` – used to load data into PostgreSQL
 - `requirements.txt` – Python dependencies
 
----
 
 ## Dataset
 
@@ -45,7 +70,6 @@ Key features include:
 - Number of Complaints
 - Claim Amount (target variable)
 
----
 
 ## Workflow
 
@@ -84,14 +108,15 @@ Random Forest achieved the best overall performance in terms of error reduction 
 ### 6. Feature Importance Analysis
 Key drivers of claim severity were identified using Random Forest feature importance.
 
-### 7. Business Intelligence Output
-Final dataset was exported for Power BI, including:
+### 7. Business Intelligence and Website Dashboard Output
+The final dataset was exported for Power BI, including:
 - Predicted claim amounts
 - Risk scores
 - Income bands
 - Claim severity labels
 
----
+The expanded predictions and model results were also used to build a Java-generated JSON export for the interactive website dashboard.
+
 
 ## Key Results
 
@@ -108,11 +133,10 @@ Final dataset was exported for Power BI, including:
 | Linear Regression | 127.78 | 178.46 | 0.7687 |
 | Ridge | 149.65 | 206.48 | 0.6903 |
 
----
 
 ## Final Output
 
-The final dataset is designed for Power BI dashboards to support:
+The final datasets support Power BI reporting and the interactive website dashboard for:
 - Risk segmentation
 - Claim severity analysis
 - Policyholder profiling
@@ -120,10 +144,11 @@ The final dataset is designed for Power BI dashboards to support:
 
 <img width="2767" height="1600" alt="image" src="https://github.com/user-attachments/assets/2042c8e7-875c-40b6-afd7-32effedfd9e3"/>
 
-More dashboard images can be found [here](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard/images).
+More Power BI dashboard images can be found [here](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard/images).
+
+**Interactive web version:** [Insurance Claims Explorer](https://worleyek.github.io/building/insurance-claims-dashboard.html).
 
 
----
 
 ## Modeling Strategy
 
@@ -137,7 +162,6 @@ To balance performance and scalability, the workflow was structured as follows:
 
 This approach allowed for efficient model development while still enabling large-scale business intelligence reporting and visualization.
 
----
 
 ## Limitations
 - The dataset is synthetic/secondary and may not fully represent real-world insurance claim behavior.
@@ -145,10 +169,8 @@ This approach allowed for efficient model development while still enabling large
 - Temporal effects were not explicitly modeled (e.g., claim trends over time).
 - External risk factors such as driving behavior, weather, or geographic hazard exposure were not included.
 
----
-
-## Future Work
+## Future Work 🪷
 - Incorporate time-series or survival analysis techniques for claim prediction over time.
 - Evaluate advanced gradient boosting frameworks such as XGBoost.
 - Build a classification model to predict high-risk policyholders.
-- Deploy the model as a dashboard or API for real-time risk scoring.
+- Connect the website dashboard to a deployed API or database for live updates and, if appropriate, real-time risk scoring.
