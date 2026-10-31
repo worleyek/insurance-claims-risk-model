@@ -19,7 +19,7 @@ The objective is to help insurers better understand risk drivers and improve und
 - **Scikit-learn** – machine learning models and evaluation
 - **Matplotlib** – visualization
 - **Power BI** – business intelligence reporting and visualizations
-- **Java** – data validation, aggregation, and JSON export for the website dashboard
+- **Java** – REST API development plus data validation, aggregation, and JSON export for the interactive website dashboard
 - **HTML / CSS / JavaScript** – interactive portfolio dashboard with responsive charts and filters
 - **GitHub Pages** – hosting for the portfolio dashboard
 
