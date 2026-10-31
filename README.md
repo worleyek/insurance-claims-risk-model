@@ -26,7 +26,7 @@ The objective is to help insurers better understand risk drivers and improve und
 
 ## Interactive Website Dashboard
 
-**[Explore the Insurance Claims Dashboard](https://worleyek.github.io/building/insurance-claims-dashboard.html)**
+🔗 **[Explore the Insurance Claims Dashboard](https://worleyek.github.io/building/insurance-claims-dashboard.html)**
 
 I built an interactive dashboard for my [personal portfolio website](https://worleyek.github.io/) to make the analysis accessible in a browser. It complements the Power BI report and presents the insurance claims results using the website's existing visual design and dark/light theme support.
 
@@ -146,7 +146,7 @@ The final datasets support Power BI reporting and the interactive website dashbo
 
 More Power BI dashboard images can be found [here](https://github.com/worleyek/insurance-claims-risk-model/tree/main/dashboard/images).
 
-**Interactive web version:** [Insurance Claims Explorer](https://worleyek.github.io/building/insurance-claims-dashboard.html).
+🌐 **Interactive web version:** [Insurance Claims Explorer](https://worleyek.github.io/building/insurance-claims-dashboard.html).
 
 
 
